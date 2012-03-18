@@ -1,4 +1,7 @@
 Changelog
 
+03/18/2012
+Initial Release
+
 03/05/2012
 Proof of concept
