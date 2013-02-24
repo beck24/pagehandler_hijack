@@ -1,7 +1,5 @@
 <?php
 
-admin_gatekeeper();  // just to be sure...
-
 // get our inputs
 $defaults = get_input('default');
 $replacements = get_input('replacement');

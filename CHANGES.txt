@@ -1,7 +1,12 @@
-Changelog
+== Version History ==
 
-03/18/2012
-Initial Release
+x.x (mm/dd/yyyy):
 
-03/05/2012
-Proof of concept
+
+1.1 (02/23/2013):
+  - fixes link urls in menu hooks
+  - fixes compatibility with other plugins that use the 'route', pagehandler hook
+  - moves settings form to *real* plugin settings page
+
+1.0 (03/18/2012):
+  - Initial Release

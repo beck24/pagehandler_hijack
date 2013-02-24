@@ -6,7 +6,7 @@
 }
 
 .pagehandler_hijack_element_default, .pagehandler_hijack_element_replacement {
-	padding: 5px;
+	padding: 10px;
 }
 
 .pagehandler_hijack_form_element_wrapper {

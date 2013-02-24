@@ -36,6 +36,10 @@ function pagehandler_hijack_linkfix($hook, $type, $returnvalue, $params){
 // check if $returnvalue['handler'] to see if we need to replace it
 // if the handler is an original handler, we want to foward it to the new url
 function pagehandler_hijack_route($hook, $type, $returnvalue, $params){
+  if (elgg_get_config('pagehandler_hijack')) {
+	return $returnvalue;
+  }
+  
   $handlers = pagehandler_hijack_get_replacements();
   
   if(in_array($returnvalue['handler'], array_keys($handlers))){
@@ -65,8 +69,26 @@ function pagehandler_hijack_route($hook, $type, $returnvalue, $params){
       elgg_set_context($original);
       // let the system load content for the original handler
       $returnvalue['handler'] = $original;
-      
-      return $returnvalue;
+	  elgg_set_config('pagehandler_hijack', true);
+	  return elgg_trigger_plugin_hook('route', $original, null, $returnvalue);
     }
+  }
+}
+
+
+function pagehandler_hijack_menufix($hook, $type, $return, $params) {
+  // we used the keyword 'all', make sure it's a menu registration we're modifying
+  if (strpos($type, 'menu:') === 0) {
+	$handlers = pagehandler_hijack_get_replacements();
+	
+	foreach ($return as $key => $item) {
+	  $url = elgg_normalize_url($item->getHref());
+	  
+	  foreach ($handlers as $original => $replacement) {
+		$url = str_ireplace(elgg_get_site_url() . $original, elgg_get_site_url() . $replacement, $url);
+	  }
+	  
+	  $return[$key]->setHref($url);
+	}
   }
 }
