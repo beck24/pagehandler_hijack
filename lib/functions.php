@@ -82,13 +82,15 @@ function pagehandler_hijack_menufix($hook, $type, $return, $params) {
 	$handlers = pagehandler_hijack_get_replacements();
 	
 	foreach ($return as $key => $item) {
-	  $url = elgg_normalize_url($item->getHref());
+	  if ($item->getHref()) {
+		$url = elgg_normalize_url($item->getHref());
 	  
-	  foreach ($handlers as $original => $replacement) {
-		$url = str_ireplace(elgg_get_site_url() . $original, elgg_get_site_url() . $replacement, $url);
+		foreach ($handlers as $original => $replacement) {
+		  $url = str_ireplace(elgg_get_site_url() . $original, elgg_get_site_url() . $replacement, $url);
+		}
+	  
+		$return[$key]->setHref($url);
 	  }
-	  
-	  $return[$key]->setHref($url);
 	}
   }
 }
