@@ -24,7 +24,16 @@ function pagehandler_hijack_init(){
   elgg_register_action("pagehandler_hijack/settings/save", elgg_get_plugins_path() . "pagehandler_hijack/actions/settings.php", 'admin');
    
   //register plugin hooks
+  // catch-all needed to catch our replacements
   elgg_register_plugin_hook_handler('route', 'all', 'pagehandler_hijack_route', 0);
+
+  
+  $handlers = array_keys(pagehandler_hijack_get_replacements());
+  foreach ($handlers as $h) {
+	  // specific handlers needed to catch route by priority since 'all' happens last regardless
+	  elgg_register_plugin_hook_handler('route', $h, 'pagehandler_hijack_route', 0);
+  }
+
   elgg_register_plugin_hook_handler('view', 'all', 'pagehandler_hijack_linkfix');
   elgg_register_plugin_hook_handler('register', 'all', 'pagehandler_hijack_menufix', 9999);
   
