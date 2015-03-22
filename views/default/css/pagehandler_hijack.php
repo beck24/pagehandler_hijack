@@ -10,7 +10,7 @@
 }
 
 .pagehandler_hijack_form_element_wrapper {
-	border: 1px solid #cecece;
+	border: 1px solid #ececec;
 	display: inline-block;
 }
 

@@ -1,6 +1,15 @@
-== Version History ==
+## Version History
 
 x.x (mm/dd/yyyy):
+
+2.0 (03/21/2015):
+ - upgrade for compatibility with 1.9
+ - general code cleanup
+ - performance tweaks (don't repeatedly hit db for handler settings)
+ - fixed some bugs
+ - removed some superfluous checks
+ - added handler updates on outgoing message queue notifications
+ - added handler updates on outgoing emails
 
 1.2 ():
   - fixes normalization of empty menu urls

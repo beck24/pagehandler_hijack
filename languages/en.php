@@ -1,6 +1,6 @@
 <?php
 
-$english = array(
+return array(
   'pagehandler_hijack' => "pagehandler_hijack",
   'pagehandler_hijack:default' => "Default",
   'pagehandler_hijack:disclaimer' => "You may rename any of the pagehandlers listed below.  Replacements
@@ -17,5 +17,3 @@ $english = array(
   
 
 );
-
-add_translation("en", $english);

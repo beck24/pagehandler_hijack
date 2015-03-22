@@ -1,10 +1,7 @@
-**************************************************
- *                                              *
-  *            Pagehandler Hijack              *
- *                                              *
-**************************************************
+# Pagehandler Hijack
 
 Installation: unzip to mod directory, enable through plugin page
+
 
 Usage: On the settings page enter in replacement terms for handlers that
 show in the URL.  These replacement handlers will become active for inbound links,

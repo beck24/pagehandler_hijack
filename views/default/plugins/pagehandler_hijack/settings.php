@@ -1,11 +1,14 @@
 <?php
 
-global $CONFIG;
+namespace MBeckett\pagehandler_hijack;
+
+elgg_load_css('pagehandler_hijack');
 
 $title  = elgg_echo('pagehandler_hijack:settings');
 
 //get current pagehandlers
-$handlers = array_keys($CONFIG->pagehandler);
+// private API, but no choice, was out-voted
+$handlers = array_filter(array_keys(_elgg_services()->router->getPageHandlers()));
 sort($handlers);
 
 echo "<div style=\"margin: 15px;\">";
@@ -13,7 +16,7 @@ echo "<h1>" . elgg_echo('pagehandler_hijack:settings') . "</h1><br><br>";
 echo elgg_echo('pagehandler_hijack:disclaimer') . "<br><br>";
 
 // get an array of our hijacks
-$hijacks = pagehandler_hijack_get_replacements();
+$hijacks = get_replacement_handlers();
 
 echo "<div class=\"pagehandler_hijack_form_element_wrapper\">";
 echo "<table><tr>";
