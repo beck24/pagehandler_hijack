@@ -98,7 +98,7 @@ function entity_url($hook, $type, $returnvalue, $params) {
  * @return \Elgg_Notifications_Notification
  */
 function prepare_notification($hook, $type, $notification, $params) {
-	if (!($notification instanceof \Elgg_Notifications_Notification)) {
+	if (!($notification instanceof \Elgg\Notifications\Notification)) {
 		return $notification;
 	}
 

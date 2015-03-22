@@ -2,6 +2,9 @@
 
 x.x (mm/dd/yyyy):
 
+3.0 (03/21/2015):
+ - upgrade compatibility with 1.10
+
 2.0 (03/21/2015):
  - upgrade for compatibility with 1.9
  - general code cleanup
