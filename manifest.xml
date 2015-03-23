@@ -3,7 +3,7 @@
 	<name>Pagehandler Hijack</name>
         <id>pagehandler_hijack</id>
 	<author>Matt Beckett (matt@mattbeckett.me)</author>
-	<version>3.0</version>
+	<version>3.0.1</version>
 	<description>Override pagehandlers in the url</description>
 	<website>http://mattbeckett.me</website>
 	<copyright>(C) Matt Beckett, 2015</copyright>
