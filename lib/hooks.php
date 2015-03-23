@@ -14,6 +14,9 @@ namespace MBeckett\pagehandler_hijack;
  * @return array
  */
 function linkfix($hook, $type, $returnvalue, $params) {
+	if (elgg_get_viewtype() == 'failsafe') {
+		return $returnvalue;
+	}
 	return handler_replace($returnvalue);
 }
 
