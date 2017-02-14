@@ -1,0 +1,20 @@
+{
+    "name": "beck24/pagehandler_hijack",
+    "type": "elgg-plugin",
+    "description": "Override pagehandlers in the url",
+    "homepage": "https://github.com/beck24/pagehandler_hijack",
+    "keywords": ["elgg", "plugin", "pagehandler", "page", "hijack"],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Matt Beckett"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/beck24/pagehandler_hijack/issues"
+    },
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": ">=1.0.8"
+    }
+}
